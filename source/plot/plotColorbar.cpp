@@ -101,7 +101,7 @@ std::string PlotColorbar::scriptColorTable() const
     if(isLog)
       ss<<"3 -Qo";
     else
-      ss<<((vMax-vMin)/9.)%"%.10g"s;
+      ss<<((vMax-vMin)/100.)%"%.10g"s;
     ss<<" >groopsPlot.cpt "<<PlotBasics::scriptError2Null()<<std::endl;
     return ss.str();
   }
