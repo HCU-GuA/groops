@@ -445,7 +445,7 @@ Bool PlotBasics::runScript() const
 #ifdef _WIN32
       System::exec(fileNamePlot.str());
 #elif __linux__
-      System::exec("xdg-open "+fileNamePlot.str()+"&");
+      System::exec("xdg-open "+fileNamePlot.str()+" >/dev/null 2>& 1");
 #endif
     }
 
