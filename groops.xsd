@@ -16875,6 +16875,11 @@
 											<xs:documentation>remove .gmt and script files</xs:documentation>
 										</xs:annotation>
 									</xs:element>
+									<xs:element name="viewPlot" type="boolean" minOccurs="0" default="0">
+										<xs:annotation>
+											<xs:documentation>starts a viewer</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
@@ -16950,6 +16955,11 @@
 									<xs:element name="removeFiles" type="boolean" minOccurs="0" default="1">
 										<xs:annotation>
 											<xs:documentation>remove .gmt and script files</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="viewPlot" type="boolean" minOccurs="0" default="0">
+										<xs:annotation>
+											<xs:documentation>starts a viewer</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 								</xs:sequence>
@@ -17073,6 +17083,11 @@
 									<xs:element name="removeFiles" type="boolean" minOccurs="0" default="1">
 										<xs:annotation>
 											<xs:documentation>remove .gmt and script files</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="viewPlot" type="boolean" minOccurs="0" default="0">
+										<xs:annotation>
+											<xs:documentation>starts a viewer</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 								</xs:sequence>
@@ -17205,6 +17220,11 @@
 											<xs:documentation>remove .gmt and script files</xs:documentation>
 										</xs:annotation>
 									</xs:element>
+									<xs:element name="viewPlot" type="boolean" minOccurs="0" default="0">
+										<xs:annotation>
+											<xs:documentation>starts a viewer</xs:documentation>
+										</xs:annotation>
+									</xs:element>
 								</xs:sequence>
 							</xs:complexType>
 						</xs:element>
@@ -17306,6 +17326,11 @@
 									<xs:element name="removeFiles" type="boolean" minOccurs="0" default="1">
 										<xs:annotation>
 											<xs:documentation>remove .gmt and script files</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="viewPlot" type="boolean" minOccurs="0" default="0">
+										<xs:annotation>
+											<xs:documentation>starts a viewer</xs:documentation>
 										</xs:annotation>
 									</xs:element>
 								</xs:sequence>
