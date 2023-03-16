@@ -1,6 +1,7 @@
 # dynamic content
 # ---------------
 /build
+/groopsGui
 groopsGui.pro.user*
 Makefile
 .qmake.stash
