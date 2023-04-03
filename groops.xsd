@@ -15000,6 +15000,44 @@
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
+			<xs:element name="Matrix2EmpiricalCovariance">
+				<xs:annotation>
+					<xs:documentation>Estimate the empirical covariance matrix of a matrix file</xs:documentation>
+					<xs:appinfo>tag: Matrix</xs:appinfo>
+					<xs:appinfo>tag: Covariance</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="outputfileCovarianceMatrix" type="filename"/>
+						<xs:element name="inputfileMatrix" type="filename" maxOccurs="unbounded"/>
+						<xs:element name="removeMean" type="boolean" minOccurs="0" default="1"/>
+						<xs:element name="differenceStep" type="uint" minOccurs="0" default="0">
+							<xs:annotation>
+								<xs:documentation>choose dt for: x,i(t) - x,j(t+dt)</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="regularize" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>add value to main diagonal</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="factorOfTrace" type="boolean" minOccurs="0" default="0">
+										<xs:annotation>
+											<xs:documentation>multiply factor with trace of matrix</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="regularizationFactor" type="double" minOccurs="0" default="0.0">
+										<xs:annotation>
+											<xs:documentation>add to main diagonal</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
 			<xs:element name="DigitalFilter2FrequencyResponse">
 				<xs:annotation>
 					<xs:documentation>amplitude and phase response of a filter cascade</xs:documentation>
