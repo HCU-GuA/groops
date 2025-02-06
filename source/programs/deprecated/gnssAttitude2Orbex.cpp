@@ -2,22 +2,19 @@
 /**
 * @file gnssAttitude2Orbex.cpp
 *
-* @brief Convert attitude of GNSS satellites to ORBEX file format (quaternions).
+* @brief DEPRECATED. Please use StarCamera2Orbex instead.
 *
 * @author Sebastian Strasser
 * @date 2019-05-29
+*
+* @deprecated Please use StarCamera2Orbex instead.
 */
 /***********************************************/
 
 // Latex documentation
 #define DOCSTRING docstring
 static const char *docstring = R"(
-Convert attitude of GNSS satellites to \href{http://acc.igs.org/misc/proposal_orbex_april2019.pdf}{ORBEX file format} (quaternions).
-
-If \configClass{earthRotation}{earthRotationType} is provided, the output file contains quaternions for rotation from TRF to satellite
-body frame (IGS/ORBEX convention), otherwise the rotation is from CRF to satellite body frame.
-
-See also \program{GnssOrbex2StarCamera}, \program{SimulateStarCameraGnss}.
+DEPRECATED. Please use \program{StarCamera2Orbex} instead.
 )";
 
 /***********************************************/
@@ -32,7 +29,7 @@ See also \program{GnssOrbex2StarCamera}, \program{SimulateStarCameraGnss}.
 
 /***** CLASS ***********************************/
 
-/** @brief Convert attitude of GNSS satellites to ORBEX file format (quaternions).
+/** @brief DEPRECATED. Please use StarCamera2Orbex instead.
 * @ingroup programsConversionGroup */
 class GnssAttitude2Orbex
 {
@@ -49,7 +46,7 @@ public:
   void run(Config &config, Parallel::CommunicatorPtr comm);
 };
 
-GROOPS_REGISTER_PROGRAM(GnssAttitude2Orbex, SINGLEPROCESS, "Convert attitude of GNSS satellites to ORBEX file format (quaternions).", Conversion, Gnss)
+GROOPS_REGISTER_PROGRAM(GnssAttitude2Orbex, SINGLEPROCESS, "DEPRECATED. Please use StarCamera2Orbex instead.", Deprecated)
 
 /***********************************************/
 
@@ -80,6 +77,8 @@ void GnssAttitude2Orbex::run(Config &config, Parallel::CommunicatorPtr /*comm*/)
     readConfig(config, "referenceFrame",           coordSystem,             Config::MUSTSET,  "IGb14", "reference frame used in file");
     readConfig(config, "comment",                  comments,                Config::OPTIONAL, "",      "");
     if(isCreateSchema(config)) return;
+
+    logWarning<<"DEPRECATED. Please use StarCamera2Orbex instead."<<Log::endl;
 
     std::vector<Time> times = timeSeriesPtr->times();
 
